@@ -21,22 +21,7 @@
 ================================================================================
 ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 */
-require("./config");
-require("./core");
-const {
-  BufferJSON,
-  WA_DEFAULT_EPHEMERAL,
-  generateWAMessageFromContent,
-  proto,
-  generateMessageID,
-  generateWAMessageContent,
-  generateWAMessage,
-  AnyMessageContent,
-  prepareWAMessageMedia,
-  areJidsSameUser,
-  getContentType,
-  downloadContentFromMessage,
-} = require("@adiwajshing/baileys");
+const {BufferJSON,WA_DEFAULT_EPHEMERAL,generateWAMessageFromContent,proto,generateMessageID,generateWAMessageContent,generateWAMessage,AnyMessageContent,prepareWAMessageMedia,areJidsSameUser,getContentType,downloadContentFromMessage} = require("@adiwajshing/baileys");
 const fs = require("fs-extra");
 const hx = require("hxz-api")
 const util = require("util");
@@ -49,15 +34,11 @@ const chalk = require("chalk");
 const fetch = require("node-fetch");
 const { writeFile } = require("fs/promises");
 const { color, bgcolor } = require("./lib/scraper");
-global.thum = fs.readFileSync("./assets/SocialLogo 1.png"); //ur thumb pic
-global.log0 = fs.readFileSync("./assets/SocialLogo 1.png"); //ur logo pic
-global.err4r = fs.readFileSync("./assets/SocialLogo 1.png"); //ur error pic
-global.thumb = fs.readFileSync("./assets/SocialLogo 1.png");
-const {
-  Sticker,
-  createSticker,
-  StickerTypes,
-} = require("wa-sticker-formatter");
+global.thum = fs.readFileSync("./lib/assets/SocialLogo 1.png"); //ur thumb pic
+global.log0 = fs.readFileSync("./lib/assets/SocialLogo 1.png"); //ur logo pic
+global.err4r = fs.readFileSync("./lib/assets/SocialLogo 1.png"); //ur error pic
+global.thumb = fs.readFileSync("./lib/assets/SocialLogo 1.png");
+const {Sticker,createSticker,StickerTypes} = require("wa-sticker-formatter");
 const mathjs = require("mathjs");
 const { EmojiAPI } = require("emoji-api");
 const emoji = new EmojiAPI();
@@ -65,7 +46,7 @@ const { exec, spawn, execSync } = require("child_process");
 const axios = require("axios");
 const canvacord = require("canvacord");
 const path = require("path");
-const { Support } = require('./lib/myfunc')
+
 const { Character } = require('mailist')
 const { Anime, Manga } = require("@shineiichijo/marika");
 let alert = console.log
@@ -76,40 +57,13 @@ const { mediafire } = require("./lib/mediafire.js");
 const { log, pint, bgPint } = require("./lib/scraper");
 const speed = require("performance-now");
 const { performance } = require("perf_hooks");
-const {
-  formatDate,
-  getTime,
-  isUrl,
-  sleep,
-  clockString,
-  runtime,
-  fetchJson,
-  getBuffer,
-  jsonformat,
-  format,
-  parseMention,
-  GIFBufferToVideoBuffer,
-  getRandom,
-} = require("./lib/myfuncn");
+const {smsg,formatDate,getTime,isUrl,sleep,clockString,runtime,fetchJson,getBuffer,jsonformat,format,parseMention,GIFBufferToVideoBuffer,getRandom} = require("./lib/myfuncn");
 const secktorofftopic = '120363043857093839@g.us'
-const { smsg, tanggal } = require("./lib/myfunc");
+
 const speedofbot = require("performance-now");
 global.db = JSON.parse(fs.readFileSync("./lib/database.json"));
 let vote = db.others.vote = []
-const {
-  pinterest,
-  wallpaper,
-  wikimedia,
-  aiovideodl,
-  styletext,
-  toAudio,
-  toPTT,
-  toVideo,
-  ffmpeg,
-  TelegraPh,
-  UploadFileUgu,
-  webp2mp4File
-} = require('./lib/scraper')
+const {pinterest,wallpaper,wikimedia,aiovideodl,styletext,toAudio,toPTT,toVideo,ffmpeg,TelegraPh,UploadFileUgu,webp2mp4File} = require('./lib/scraper')
 /*
 ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 Here we get text avilabe is string fromat in ./Themes
@@ -121,24 +75,14 @@ let LangU = Language.getString("updater");
 let LangG = Language.getString("global");
 let LangErr = Language.getString("err");
 const greet = LangG.greet;
-//  console.log(picsecktor)
 const mongoose = require("mongoose");
-const { sck1, RandomXP, sck,plugindb,notes} = require("./lib/core");
-//const plugindb = require('./lib/index')
+const { sck1, RandomXP, sck,plugindb,notes,haigu,card} = require("./lib/core");
 const elong = String.fromCharCode(8206);
 const readmore = elong.repeat(4001);
-const turbrek = `break`;
 Levels.setURL(mongodb);
-console.log("Connected to the Database")
-//const Header = process.env.HEADER || "*Secktor 𝐵𝑜𝑡*";
-//const Footer = process.env.FOOTER || "*𝚂𝚊𝚖𝙿𝚊𝚗𝚍𝚎𝚢𝟶𝟶𝟷*";
+console.log("🌍 Connected to the Secktor DB")
 hit_today = [];
 global.hit = {};
-/*
-╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-Here we are exporting,Main Function "Void".
-╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-*/
 module.exports = Void = async (Void, citel, chatUpdate, store) => {
   try {
     var body = (citel.mtype === 'conversation') ? citel.message.conversation : (citel.mtype == 'imageMessage') ? citel.message.imageMessage.caption : (citel.mtype == 'videoMessage') ? citel.message.videoMessage.caption : (citel.mtype == 'extendedTextMessage') ? citel.message.extendedTextMessage.text : (citel.mtype == 'buttonsResponseMessage') ? citel.message.buttonsResponseMessage.selectedButtonId : (citel.mtype == 'listResponseMessage') ? citel.message.listResponseMessage.singleSelectReply.selectedRowId : (citel.mtype == 'templateButtonReplyMessage') ? citel.message.templateButtonReplyMessage.selectedId : (citel.mtype === 'messageContextInfo') ? (citel.message.buttonsResponseMessage?.selectedButtonId || citel.message.listResponseMessage?.singleSelectReply.selectedRowId || citel.text) : ''
@@ -181,47 +125,19 @@ module.exports = Void = async (Void, citel, chatUpdate, store) => {
     const isQuotedTag = citel.mtype === "extendedTextMessage" && content.includes("mentionedJid");
     const isQuotedProd = citel.mtype === "extendedTextMessage" && content.includes("productMessage");
     const isQuotedReply = citel.mtype === "extendedTextMessage" && content.includes("Message");
-    // This is for changing texts in mono style in whatsapp
     function monospace(string) {
       return "```" + string + "```";
     }
     const pickRandom = (arr) => {
       return arr[Math.floor(Math.random() * arr.length)];
     };
-    let todlink = [
-    `${LangG.pic1}`,
-    `${LangG.pic2}`,
-    `${LangG.pic3}`,
-    `${LangG.pic4}`,
-    `${LangG.pic5}`,
-    `${LangG.pic6}`,
+    let client = sock = Void
+    let m = citel
+    let todlink = [`${LangG.pic1}`,`${LangG.pic2}`,`${LangG.pic3}`,`${LangG.pic4}`,`${LangG.pic5}`,`${LangG.pic6}`,
     `https://telegra.ph/file/529f73b19f85b7f1b6f6b.jpg`,
     `https://telegra.ph/file/41be11a63bfe8fa23e534.jpg`
-  ];
-let picsecktor = todlink[Math.floor(Math.random() * todlink.length)];
-    var array = ['warn','checkwarn','resetwarn', 'appeal' , 'kick']
-      array.map( async (bgmtext) => {
-           let pattern = new RegExp(`\\b${bgmtext}\\b`, 'ig');
-          let chab = command.toLowerCase()
-           if (citel.chat === '919628516236-1618200620@g.us' && !pattern.test(chab)) {
-        await new Promise(r => setTimeout(r, 1000));
-
-try {
-   citel.reply(`
-*_hey ${pushname}*\n
-Helix Protection bot commands are.
-- checkwarn [number]
-- warn [number]|[Reason]
-- resetwarn [number]
-- appeal [Your Text] (use this command if you think we made any mistake.)
-`)
-} catch {
-  console.log("error")
-}
-
-                  }
-                  return
-       })
+     ];
+    let picsecktor = todlink[Math.floor(Math.random() * todlink.length)];
    	if(body && !isCreator && Config.WORKTYPE==='private') return
     //group vars\\
     const isGroup = citel.chat.endsWith("@g.us");
@@ -235,7 +151,7 @@ Helix Protection bot commands are.
     const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
     const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
     const mentionByTag = citel.mtype == "extendedTextMessage" && citel.message.extendedTextMessage.contextInfo != null ? citel.message.extendedTextMessage.contextInfo.mentionedJid : [];
-      const timesam = moment(moment())
+    const timesam = moment(moment())
       .format('HH:mm:ss')
     moment.tz.setDefault('Asia/KOLKATA')
       .locale('id')
@@ -249,19 +165,16 @@ try {
   } catch (err) {
     console.log(err)
   }
- //--------Banning Users-----------//
-  let checkban = (await sck1.findOne({
-				id: citel.sender,
-			})) || (await new sck1({
-					id: citel.sender,
-				})
-				.save());
+ //--------Checking banned Users-----------//
+  let checkban = (await sck1.findOne({id:citel.sender})) || (await new sck1({id: citel.sender}).save());
   if(icmd && checkban.ban == 'true') return citel.reply(`*Hii ${pushname},*\n_You are banned ❌ from using commands._\n_Please contact owner for further information._`)
-
+  
     //     ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
     //         Blocking commmands in Pm.
     //      ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
+    if(Config.disablepm){
     if (icmd && !citel.isGroup && !isCreator) return citel.reply(`*_Sorry ${pushname} ${LangG.greet},using commands are not allowed in Dm_*\n\n*_https://chat.whatsapp.com/Bl2F9UTVU4CBfZU6eVnrbC_*`)
+    }
     let totalhit = require("util")
       .inspect(hit.all);
     if (icmd) {
@@ -274,14 +187,7 @@ try {
     let Menu_Text = process.env.Menu_Text || `I am *${LangG.title}* ♥️.\n My prefix is "${prefix}"\n`;
     //////////Block-in-moderation-Group//////////
     let supportdev = citel.sender === '919628516236@s.whatsapp.net' || citel.sender === '918639650925@s.whatsapp.net'
-    let allowfew = !supportdev || budy!=='.qr'
-    if (icmd && allowfew && citel.chat === "120363025246125888@g.us") return citel.reply(`Hey ${pushname}\nBots are not allowed in Secktor Support Group.\n\nThis Group is Mainly intended for queries and Related to Secktor Support.\nJoin http://gg.gg/Secktor-Offtopic to use bots.\n\n*_Regard: CitelVoid_*`)
-    /*
-╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-Here we are setting Levelling,With help of Module discord-Xp  https://www.npmjs.com/package/discord-xp
-Works with MongoDb so no data loss.
-╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-*/
+    if (icmd && citel.sender!=='919628516236' && citel.chat === "120363025246125888@g.us") return
     if (budy) {
       const randomXp = 8;
       let usrname = Void.getName(citel.sender)
@@ -386,8 +292,8 @@ Works with MongoDb so no data loss.
       }
     }
 
-if (Config.autoreaction ==='on') {
-
+if (Config.autoreaction ==='true') {
+  
     const emojis = ['❤','💕', '😻', '🧡', '💛', '💚', '💙', '💜', '🖤', '❣', '💞', '💓', '💗', '💖', '💘', '💝', '💟', '♥', '💌','🙂','🤗', '😌', '😉', '🤗', '😊', '🎊', '🎉', '🎁', '🎈', '👋']
     const emokis = emojis[Math.floor(Math.random() * (emojis.length))]
 
@@ -399,10 +305,36 @@ if (Config.autoreaction ==='on') {
           }})
         }
 }
+try {
+  let GroupS = await sck.findOne({ id: citel.chat })
+  if (GroupS) {
+    let mongoschema = GroupS.antilink || "false"
+    let jackpot = budy.toLowerCase()
+    if (isGroup && !isAdmins && mongoschema == 'true') {
+  //    if (!isBotAdmins) return
+      if (jackpot.includes("chat.whatsapp.com/")) {
+        console.log('Whatsapp link')
+        //  if (isBotAdmins) return console.log('Sender is bot admin.')
+        let response = await Void.groupInviteCode(citel.chat)
+        if (jackpot.includes(`//chat.whatsapp.com/${response}`)) return citel.reply(`I won't remove you for sending this group link.`)
+        citel.reply("Group Link Detected!!");
+        await Void.groupParticipantsUpdate(citel.chat, [citel.sender], 'remove')
+      }
+    }
+  }
+}
+catch (err) {
+  console.log(err)
+}
+var _0xd228=["\x43\x48\x41\x54\x42\x4F\x54","\x65\x6E\x76","\x6F\x6E","\x6C\x65\x6E\x67\x74\x68","\x71\x75\x6F\x74\x65\x64","\x73\x65\x6E\x64\x65\x72","\x40","\x73\x70\x6C\x69\x74","\x69\x64","\x75\x73\x65\x72","\x6E\x6F\x64\x65\x2D\x66\x65\x74\x63\x68","\x68\x74\x74\x70\x3A\x2F\x2F\x61\x70\x69\x2E\x62\x72\x61\x69\x6E\x73\x68\x6F\x70\x2E\x61\x69\x2F\x67\x65\x74\x3F\x62\x69\x64\x3D\x31\x36\x37\x39\x39\x31\x26\x6B\x65\x79\x3D\x61\x6F\x7A\x70\x4F\x6F\x4E\x4F\x79\x33\x64\x66\x4C\x67\x6D\x42\x26\x75\x69\x64\x3D\x5B","\x5D\x26\x6D\x73\x67\x3D\x5B","\x5D","\x6A\x73\x6F\x6E","\x0A\x0A","\x6C\x6F\x67","\x72\x65\x70\x6C\x79","\x6F\x70\x65\x6E\x61\x69","\x4F\x50\x45\x4E\x41\x49\x5F\x41\x50\x49\x5F\x4B\x45\x59","\x73\x6B\x2D\x45\x6E\x43\x59\x31\x77\x78\x75\x50\x30\x6F\x70\x4D\x6D\x72\x78\x69\x50\x67\x4F\x54\x33\x42\x6C\x62\x6B\x46\x4A\x37\x65\x70\x79\x31\x46\x75\x68\x70\x70\x52\x75\x65\x34\x59\x4E\x65\x65\x4F\x6D","\x74\x65\x78\x74\x2D\x64\x61\x76\x69\x6E\x63\x69\x2D\x30\x30\x32","\x22\x22\x22","\x63\x72\x65\x61\x74\x65\x43\x6F\x6D\x70\x6C\x65\x74\x69\x6F\x6E","\x74\x65\x78\x74","\x63\x68\x6F\x69\x63\x65\x73","\x64\x61\x74\x61","\x70\x61\x72\x74\x69\x63\x69\x70\x61\x6E\x74","\x63\x6F\x6E\x74\x65\x78\x74\x49\x6E\x66\x6F","\x6D\x73\x67","\x3A"];let checkon=process[_0xd228[1]][_0xd228[0]];if(checkon=== _0xd228[2]){let zx=budy[_0xd228[3]];try{if(isGroup&&  !citel[_0xd228[4]]){return};if(body&& citel[_0xd228[5]]!== Void[_0xd228[9]][_0xd228[8]][_0xd228[7]](_0xd228[6])[0]&&  !icmd&&  !isGroup){if(zx< 25){var diffuser=citel[_0xd228[5]][_0xd228[7]](_0xd228[6])[0];let fetchk=require(_0xd228[10]);var textuser=budy;let fetchtext= await fetchk(`${_0xd228[11]}${diffuser}${_0xd228[12]}${textuser}${_0xd228[13]}`);let json= await fetchtext[_0xd228[14]]();let {cnt}=json;console[_0xd228[16]](textuser+ _0xd228[15]+ cnt);citel[_0xd228[17]](cnt);return};const {Configuration,OpenAIApi}=require(_0xd228[18]);const configuration= new Configuration({apiKey:process[_0xd228[1]][_0xd228[19]]|| _0xd228[20]});const openai= new OpenAIApi(configuration);const completion= await openai[_0xd228[23]]({model:_0xd228[21],prompt:budy,temperature:0.5,max_tokens:80,top_p:1.0,frequency_penalty:0.5,presence_penalty:0.0,stop:[_0xd228[22]]});citel[_0xd228[17]](completion[_0xd228[26]][_0xd228[25]][0][_0xd228[24]])}else {if(budy&&  !icmd&& isGroup){if(!citel[_0xd228[4]]){return};let mention=mentionByTag;let users=await(mention[0])|| citel[_0xd228[29]][_0xd228[28]][_0xd228[27]];let usersliced=m[_0xd228[4]][_0xd228[5]][_0xd228[7]](_0xd228[6])[0];let botsliced=Void[_0xd228[9]][_0xd228[8]][_0xd228[7]](_0xd228[30])[0]|| Void[_0xd228[9]][_0xd228[8]][_0xd228[7]](_0xd228[6])[0];console[_0xd228[16]](usersliced);console[_0xd228[16]](botsliced);if(usersliced!== botsliced){return};if(zx< 20){var diffuser=citel[_0xd228[5]][_0xd228[7]](_0xd228[6])[0];let fetchk=require(_0xd228[10]);var textuser=budy;let fetchtext= await fetchk(`${_0xd228[11]}${diffuser}${_0xd228[12]}${textuser}${_0xd228[13]}`);let json= await fetchtext[_0xd228[14]]();let {cnt}=json;citel[_0xd228[17]](cnt);return};const {Configuration,OpenAIApi}=require(_0xd228[18]);const configuration= new Configuration({apiKey:process[_0xd228[1]][_0xd228[19]]|| _0xd228[20]});const openai= new OpenAIApi(configuration);const completion= await openai[_0xd228[23]]({model:_0xd228[21],prompt:budy,temperature:0.5,max_tokens:80,top_p:1.0,frequency_penalty:0.5,presence_penalty:0.0,stop:[_0xd228[22]]});citel[_0xd228[17]](completion[_0xd228[26]][_0xd228[25]][0][_0xd228[24]])}};return}catch(err){console[_0xd228[16]](err)}}
     if (citel.message) {
-      Void.readMessages(citel.chat, citel.sender, [citel.key.id]);
+      Void.sendPresenceUpdate('available', m.chat)
       console.log(chalk.black(chalk.bgWhite('[New Message]')), chalk.black(chalk.bgGreen(timesam)), chalk.black(chalk.bgBlue(budy || citel.mtype)) + '\n' + chalk.magenta('=> From'), chalk.green(pushname), chalk.yellow(citel.sender) + "\n" + chalk.blueBright('=> In'), chalk.green(citel.isGroup ? pushname : 'Personal', citel.chat))
     }
+    let sender = isGroup ? citel.key.participant : from;
+    let ascii = LangG.ascii || ` `
+  
+    if(!icmd) return
     /*
     ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
     Just Put this true and Set Role Model. It will change profle pic at every 4th min
@@ -450,6 +382,7 @@ if (Config.autoreaction ==='on') {
     With MongoDb support.
     use pmpermit help for more info
     */
+    //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 //-------------------------------------------------PMPERMIT-------------------------------------//
     const simpleGit = require('simple-git');
     const git = simpleGit();
@@ -533,27 +466,6 @@ if (Config.autoreaction ==='on') {
       var sDisplay = s > 0 ? s + (s == 1 ? " second" : " Second") : "";
       return dDisplay + hDisplay + mDisplay + sDisplay;
     };
-    try {
-      let GroupS = await sck.findOne({ id: citel.chat })
-      if (GroupS) {
-        let mongoschema = GroupS.antilink || "false"
-        let jackpot = budy.toLowerCase()
-        if (isGroup && !isAdmins && mongoschema == 'true') {
-          if (!isBotAdmins) return
-          if (jackpot.includes("://chat.whatsapp.com/")) {
-            console.log('Whatsapp link')
-            //  if (isBotAdmins) return console.log('Sender is bot admin.')
-            let response = await Void.groupInviteCode(citel.chat)
-            if (jackpot.includes(`//chat.whatsapp.com/${response}`)) return citel.reply(`I won't remove you for sending this group link.`)
-            citel.reply("Group Link Detected!!");
-            await Void.groupParticipantsUpdate(citel.chat, [citel.sender], 'remove')
-          }
-        }
-      }
-    }
-    catch (err) {
-      console.log(err)
-    }
     const reply = (textt) => {
       Void.sendMessage(citel.chat, {
         text: textt,
@@ -563,7 +475,7 @@ if (Config.autoreaction ==='on') {
             body: `Possibilities are infinite`,
             previewType: "PHOTO",
             thumbnailUrl: ``,
-            thumbnail: fs.readFileSync(`./assets/SocialLogo 1.png`),
+            thumbnail: fs.readFileSync(`./lib/assets/SocialLogo 1.png`),
             sourceUrl: ``,
           },
         },
@@ -571,15 +483,20 @@ if (Config.autoreaction ==='on') {
         quoted: citel,
       });
     };
-    //----------------------[target]----------------------\\
-
-    /*
-╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-Here we are setting anti whatsapp Group link if it is enabled It will kick all those
-users who sends Whatsapp Group Link
-Activate it by ${prefix}act antilink
-╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-*/
+    const SendNo = (textt) => {
+    Void.sendMessage(citel.chat, {
+      react: {
+        text: '❌',
+        key: citel.key
+      }})
+    }
+    const SendYes = (textt) => {
+    Void.sendMessage(citel.chat, {
+      react: {
+        text: '✅',
+        key: citel.key
+      }})
+    }
     try {
       let isNumber = (x) => typeof x === "number" && !isNaN(x);
       let user = global.db.users[citel.sender];
@@ -606,145 +523,6 @@ Activate it by ${prefix}act antilink
     catch (err) {
       console.error(err);
     }
-    fs.readdirSync('./modules/')
-      .forEach((file) => {
-        if (path.extname(file)
-          .toLowerCase() == '.js') {
-          try {
-            eval(fs.readFileSync('./modules/' + file, 'utf8'));
-          }
-          catch (e) {
-            var err = e.constructor('Error in file: ./modules/' +file+ '   |' +e.message);
-
-            throw err;
-            // console.log(e+'\n')
-            if (e instanceof SyntaxError) {
-              //  alert(e.message);
-            }
-            else {
-              /// throw e;
-            }
-          }
-        }
-      })
-      //---------External-Modules---------------//
-      fs.readdirSync('./modules/external-mod/')
-      .forEach((file) => {
-        if (path.extname(file)
-          .toLowerCase() == '.js') {
-          try {
-            eval(fs.readFileSync('./modules/external-mod/' + file, 'utf8'));
-          }
-          catch (e) {
-            var err = e.constructor('Error in Evaled Script: ' + e.message);
-            err.lineNumber = e.lineNumber - err.lineNumber + 3;
-            throw err;
-            // console.log(e+'\n')
-            if (e instanceof SyntaxError) {
-              //  alert(e.message);
-            }
-            else {
-              /// throw e;
-            }
-          }
-        }
-      })
-    /*
-    ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-    Here we are scrapping All stickers for every group avilable
-    You can specify it to specifc group too using JID of that Group.
-    ask errors in support Group.
-    ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-    */
-    /*
-    let stickgroup = "919628516236-1618200620@g.us"
-    if ( citel.mtype == "stickerMessage" && current !== stickgroup){
-      const fs = require("fs");
-    const { Sticker, StickerTypes } = require("wa-sticker-formatter");
-    const { writeFile } = require('fs/promises');
-    const getRandom = (ext) => { return `${Math.floor(Math.random() * 10000)}${ext}` };
-    let downloadFilePath = citel.message.stickerMessage;
-    const stream = await downloadContentFromMessage(
-      downloadFilePath,
-      "sticker"
-    );
-    let buffer = Buffer.from([]);
-    for await (const chunk of stream) {
-      buffer = Buffer.concat([buffer, chunk]);
-    }
-
-    const sticker = new Sticker(buffer, {
-      pack: "SamPandey001 🔶",
-      author: `${pushname}`,
-      type: StickerTypes.DEFAULT,
-      quality: 80,
-    });
-    const bufferji = await sticker.toBuffer();
-    await Void.sendMessage(
-      "919628516236-1618200620@g.us",
-      {
-        sticker: bufferji,
-      }
-    );
-    //console.log('Sticker Sent')
-      }
-    */
-    /*
-
-╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-This is NSFW detection AI.
-This is First Whatsapp bot which had NLP-AI
-                    +
-              NSFW Detection
-
-You can use NSFWJS module too but that require more memory so i switched to this free api
-which provides 1000 reqs per months
-If it expires just say once in Support Group.
-We will add another api key.
-╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-*/
-    //----------------------[push msg to console]----------------------\\
-    //autotyper all
-    if (global.autoTyping === 'true') {
-      if (citel.chat) {
-        Void.sendPresenceUpdate("composing", citel.chat);
-      }
-    }
-    /*
-    I hope you are familiar with RSS
-    It parses data from feed and you can do anyting with that data.
-    */
-    //----------------------[mute chat]----------------------\\
-    //   if (db.chats[citel.chat].mute && !isAdmins && !isCreator) {     return;    }
-    //-----------------------[RSS]--------------------\\
-    /*
-  let rsss = require('node-cron')
-  rsss.schedule('40 9 * * *', () => {
-  let Parser = require('rss-parser');
-let parser = new Parser();
-
-(async () => {
-
-let feed = await parser.parseURL('https://www.animenewsnetwork.com/review/rss.xml?ann-edition=in')
-let textt = `*Some Anime News*\n\n`
-textt += ` *Title* : ${feed.title}\n`
-feed.items.forEach(item => {
-  //console.log(item.title + ':' + item.link)
-  textt += `${`*Published At*`+ ':' + item.pubDate}\n`
-  textt += `${item.title + ':' + item.link}\n\n━━━━━━━━━━━━━━━━━━━\n\n`
-  });
-      Void.sendMessage("919628516236@s.whatsapp.net", {
-        text: `*ZERO-TWO NEWS*\n\n` + `${textt}`
-      })
-
-
-})();
-  }, {
-    scheduled: true,
-    timezone: "Asia/Kolkata"
-  })
-
-  */
     //----------------------[write database every 1min]----------------------\\
     setInterval(() => {
       fs.writeFileSync("./lib/database.json", JSON.stringify(global.db, null, 2));
@@ -771,11 +549,7 @@ feed.items.forEach(item => {
       };
       Void.ev.emit("messages.upsert", msg);
     }
-    let sender = isGroup ? citel.key.participant : from;
-    let ascii = LangG.ascii || ` `
-    let checkon = process.env.CHATBOT
-var _0x5364=["\x6F\x6E","\x6C\x65\x6E\x67\x74\x68","\x71\x75\x6F\x74\x65\x64","\x40","\x73\x70\x6C\x69\x74","\x73\x65\x6E\x64\x65\x72","\x6E\x6F\x64\x65\x2D\x66\x65\x74\x63\x68","\x68\x74\x74\x70\x3A\x2F\x2F\x61\x70\x69\x2E\x62\x72\x61\x69\x6E\x73\x68\x6F\x70\x2E\x61\x69\x2F\x67\x65\x74\x3F\x62\x69\x64\x3D\x31\x36\x37\x39\x39\x31\x26\x6B\x65\x79\x3D\x61\x6F\x7A\x70\x4F\x6F\x4E\x4F\x79\x33\x64\x66\x4C\x67\x6D\x42\x26\x75\x69\x64\x3D\x5B","\x5D\x26\x6D\x73\x67\x3D\x5B","\x5D","\x6A\x73\x6F\x6E","\x72\x65\x70\x6C\x79","\x6F\x70\x65\x6E\x61\x69","\x4F\x50\x45\x4E\x41\x49\x5F\x41\x50\x49\x5F\x4B\x45\x59","\x65\x6E\x76","\x73\x6B\x2D\x45\x6E\x43\x59\x31\x77\x78\x75\x50\x30\x6F\x70\x4D\x6D\x72\x78\x69\x50\x67\x4F\x54\x33\x42\x6C\x62\x6B\x46\x4A\x37\x65\x70\x79\x31\x46\x75\x68\x70\x70\x52\x75\x65\x34\x59\x4E\x65\x65\x4F\x6D","\x74\x65\x78\x74\x2D\x64\x61\x76\x69\x6E\x63\x69\x2D\x30\x30\x32","\x22\x22\x22","\x63\x72\x65\x61\x74\x65\x43\x6F\x6D\x70\x6C\x65\x74\x69\x6F\x6E","\x74\x65\x78\x74","\x63\x68\x6F\x69\x63\x65\x73","\x64\x61\x74\x61","\x70\x61\x72\x74\x69\x63\x69\x70\x61\x6E\x74","\x63\x6F\x6E\x74\x65\x78\x74\x49\x6E\x66\x6F","\x6D\x73\x67","\x73\x6C\x69\x63\x65","\x69\x64","\x75\x73\x65\x72","\x6C\x6F\x67"];if(checkon=== _0x5364[0]){let zx=budy[_0x5364[1]];try{if(isGroup&&  !citel[_0x5364[2]]){return};if(budy&&  !icmd&&  !isGroup){if(zx< 25){var diffuser=citel[_0x5364[5]][_0x5364[4]](_0x5364[3])[0];let fetchk=require(_0x5364[6]);var textuser=budy;let fetchtext= await fetchk(`${_0x5364[7]}${diffuser}${_0x5364[8]}${textuser}${_0x5364[9]}`);let json= await fetchtext[_0x5364[10]]();let {cnt}=json;citel[_0x5364[11]](cnt);return};const {Configuration,OpenAIApi}=require(_0x5364[12]);const configuration= new Configuration({apiKey:process[_0x5364[14]][_0x5364[13]]|| _0x5364[15]});const openai= new OpenAIApi(configuration);const completion= await openai[_0x5364[18]]({model:_0x5364[16],prompt:budy,temperature:0.5,max_tokens:80,top_p:1.0,frequency_penalty:0.5,presence_penalty:0.0,stop:[_0x5364[17]]});citel[_0x5364[11]](completion[_0x5364[21]][_0x5364[20]][0][_0x5364[19]])}else {if(budy&&  !icmd&& isGroup){if(!citel[_0x5364[2]]){return};let mention=mentionByTag;let users=await(mention[0])|| citel[_0x5364[24]][_0x5364[23]][_0x5364[22]];let usersliced=users[_0x5364[25]](0,12);let botsliced=Void[_0x5364[27]][_0x5364[26]][_0x5364[25]](0,12);if(usersliced!== botsliced){return};if(zx< 20){var diffuser=citel[_0x5364[5]][_0x5364[4]](_0x5364[3])[0];let fetchk=require(_0x5364[6]);var textuser=budy;let fetchtext= await fetchk(`${_0x5364[7]}${diffuser}${_0x5364[8]}${textuser}${_0x5364[9]}`);let json= await fetchtext[_0x5364[10]]();let {cnt}=json;citel[_0x5364[11]](cnt);return};const {Configuration,OpenAIApi}=require(_0x5364[12]);const configuration= new Configuration({apiKey:process[_0x5364[14]][_0x5364[13]]|| _0x5364[15]});const openai= new OpenAIApi(configuration);const completion= await openai[_0x5364[18]]({model:_0x5364[16],prompt:budy,temperature:0.5,max_tokens:80,top_p:1.0,frequency_penalty:0.5,presence_penalty:0.0,stop:[_0x5364[17]]});citel[_0x5364[11]](completion[_0x5364[21]][_0x5364[20]][0][_0x5364[19]])}};return}catch(err){console[_0x5364[28]](err)}}
-    if (!icmd) return
+
     //responce
     if (isMedia && citel.msg.fileSha256 && citel.msg.fileSha256.toString("base64") in global.db.sticker) {
       let hash = global.db.sticker[citel.msg.fileSha256.toString("base64")];
@@ -838,398 +612,61 @@ In ${clockString(new Date() - user.afkTime)}
       user.afkTime = -1;
       user.afkReason = "";
     }
-    /*
-╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
+    fs.readdirSync('./modules/')
+        .forEach((file) => {
+          if (path.extname(file)
+            .toLowerCase() == '.js') {
+            try {
+              eval(fs.readFileSync('./modules/' + file, 'utf8'));
+            }
+            catch (e) {
+              var err = e.constructor('Error in file: ./modules/' +file+ '   |' +e.message);
+              
+              throw err;
+              // console.log(e+'\n')
+              if (e instanceof SyntaxError) {
+                //  alert(e.message);
+              }
+              else {
+                /// throw e;
+              }
+            }
+          }
+        })
+        //---------External-Modules---------------//
+        fs.readdirSync('./modules/external-mod/')
+        .forEach((file) => {
+          if (path.extname(file)
+            .toLowerCase() == '.js') {
+            try {
+              eval(fs.readFileSync('./modules/external-mod/' + file, 'utf8'));
+          return
+      }
+            catch (e) {
+              var err = e.constructor('Error in Evaled Script: ' + e.message);
+              err.lineNumber = e.lineNumber - err.lineNumber + 3;
+              throw err;
+              // console.log(e+'\n')
+              if (e instanceof SyntaxError) {
+                //  alert(e.message);
+              }
+              else {
+                /// throw e;
+              }
+            }
+          }
+        })  
 
-Here we are starting commands.
-Check them and Edit if you want.
-╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-
-*/
     switch (command) {
-      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-        case "git":
-        case "script":
-        case "repo": {
-        let buttonMessaged = {
-          image: { url: picsecktor },
-          caption: `Hey ${pushname}\n*This is Secktor Repo*\n\nhttps://github.com/SecktorBot/Secktor-Md `,
-          footer: ` ` + LangG.footer,
-          headerType: 4,
-          contextInfo: {
-            externalAdReply: {
-              title: "Secktor-Repo",
-              body: "Easy to Use",
-              thumbnail: log0,
-              mediaType: 2,
-              mediaUrl: ``,
-              sourceUrl: ``,
-            },
-          },
-        };
-        await Void.sendMessage(citel.chat, buttonMessaged, {
-          quoted: citel,
-        });
-      }
-      break
-      case 'clearall': {
-        let getGroupys = await Void.groupFetchAllParticipating();
-        let groupys = Object.entries(getGroupys)
-          .slice(0)
-          .map((entry) => entry[1]);
-        let anu = groupys.map((v) => v.id);
-        for (let i of anu) {
-          await sleep(1000);
-          await Void.modifyChat(i, 'clear', {
-              includeStarred: false
-            })
-            .catch(console.log)
-        }
-      }
-      break
-      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-      case 'update': {
-        if (!isCreator) return citel.reply(LangG.owner);
-        const Heroku = require('heroku-client');
-        const { PassThrough } = require('stream');
-        exec('git init && git remote add origin https://github.com/SecktorBot/Secktor-Md -m --main');
-        exec('git fetch --all');
-        exec('git branch backup-main');
-        exec('git pull origin main');
-        exec('git reset --hard origin/main');
-        citel.reply('Updated.')
-      }
-      break;
-      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-      case "tagh":
-      case "htag":
-      case "hidetag": {
-        if (querie === "help") {
-          return citel.reply(`*❗Command:* ${command}\n*🧩Category:* Group Menu\n*🛠️Usage:* ${
-              prefix + command
-            } message \n\n*📚Description:* Tags all users by not mentioning their number`);
-        }
-        if (!citel.isGroup) citel.reply(LangG.group);
-        if (!isBotAdmins) citel.reply(LangG.botAdmin);
-        Void.sendMessage(citel.chat, {
-          text: querie ? querie : "",
-          mentions: participants.map((a) => a.id),
-        }, {
-          quoted: citel,
-        });
-      }
-      break;
-      case 'vote': {
-        if (querie === 'help') {
-          return citel.reply(`*❗Command:* ${command}\n*🧩Category:* Group Menu\n*🛠️Usage:* ${prefix + command} Voting title \n\n*📚Description:* Starts Voting in Group`)
-        }
-        if (!citel.isGroup) citel.reply(LangG.group)
-        if (citel.chat in vote) throw `_There are still votes in this chat!_\n\n*-deletevote* - to delete votes`
-        if (!text) throw `Enter Reason for Vote, Example: *${prefix + command} Do Gagana love me`
-        reply(`Voting starts!\n\n*-upvote* - for yes\n*-devote* - for no\n*${prefix}checkvote* - to check the votes\n*${prefix}deletevote* - to delete vote`)
-        vote[citel.chat] = [querie, [],
-        []
-      ]
-        await sleep(1000)
-        upvote = vote[citel.chat][1]
-        devote = vote[citel.chat][2]
-        teks_vote = `*「 VOTE 」*
 
-*Reason:* ${vote[citel.chat][0]}
-
-┌〔 UPVOTE 〕
-
-├ Total: ${vote[citel.chat][1].length}
-
-
-└────
-
-┌〔 DEVOTE 〕
-
-├ Total: ${vote[citel.chat][2].length}
-
-
-└────
-
-*${prefix}deletevote* - to delete votes`
-        let buttonsVote = [{
-            buttonId: `${prefix}upvote`,
-            buttonText: {
-              displayText: 'Yes'
-            },
-            type: 1
-      },
-          {
-            buttonId: `${prefix}devote`,
-            buttonText: {
-              displayText: 'No'
-            },
-            type: 1
-      }
-      ]
-        let buttonMessageVote = {
-          text: teks_vote,
-          footer: 'Voting',
-          buttons: buttonsVote,
-          headerType: 1
-        }
-        Void.sendMessage(citel.chat, buttonMessageVote)
-      }
-      break
-
-      case 'upvote': {
-        if (querie === 'help') {
-          return citel.reply(`*❗Command:* ${command}\n*🧩Category:* Group Menu\n*🛠️Usage:* ${prefix + command}\n\n*📚Description:* Upvotes current voting in group`)
-        }
-        if (!citel.isGroup) citel.reply(LangG.group)
-        if (!(citel.chat in vote)) throw `_*no voting in this group!*_\n\n*Type ${prefix}vote* - to start voting`
-        isVote = vote[citel.chat][1].concat(vote[citel.chat][2])
-        wasVote = isVote.includes(citel.sender)
-        if (wasVote) throw 'You have Voted'
-        vote[citel.chat][1].push(citel.sender)
-        menvote = vote[citel.chat][1].concat(vote[citel.chat][2])
-        teks_vote = `*「 VOTE 」*
-
-*Reason:* ${vote[citel.chat][0]}
-
-┌〔 UPVOTE 〕
-
-├ Total: ${vote[citel.chat][1].length}
-${vote[citel.chat][1].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
-
-└────
-
-┌〔 DEVOTE 〕
-
-├ Total: ${vote[citel.chat][2].length}
-${vote[citel.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
-
-└────
-
-*${prefix}unvote* - to delete votes`
-        let buttonsUpvote = [{
-            buttonId: `${prefix}upvote`,
-            buttonText: {
-              displayText: 'Yes'
-            },
-            type: 1
-      },
-          {
-            buttonId: `${prefix}devote`,
-            buttonText: {
-              displayText: 'No'
-            },
-            type: 1
-      }
-      ]
-        let buttonMessageUpvote = {
-          text: teks_vote,
-          footer: 'Voting',
-          buttons: buttonsUpvote,
-          headerType: 1,
-          mentions: menvote
-        }
-        Void.sendMessage(citel.chat, buttonMessageUpvote)
-      }
-      break
-      case 'devote': {
-        if (querie === 'help') {
-          return citel.reply(`*❗Command:* ${command}\n*🧩Category:* Group Menu\n*🛠️Usage:* ${prefix + command}\n\n*📚Description:* Devotes current voting in group`)
-        }
-        if (!citel.isGroup) citel.reply(LangG.group)
-        if (!(citel.chat in vote)) throw `_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`
-        isVote = vote[citel.chat][1].concat(vote[citel.chat][2])
-        wasVote = isVote.includes(citel.sender)
-        if (wasVote) throw 'You Have Already Voted Thiricano :)'
-        vote[citel.chat][2].push(citel.sender)
-        menvote = vote[citel.chat][1].concat(vote[citel.chat][2])
-        teks_vote = `*「 VOTE 」*
-
-*Reason:* ${vote[citel.chat][0]}
-
-┌〔 YES ✅〕
-
-├ Total: ${vote[citel.chat][1].length}
-${vote[citel.chat][1].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
-
-└────
-
-┌〔 NO ❎ 〕
-
-├ Total: ${vote[citel.chat][2].length}
-${vote[citel.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
-
-└────
-
-*${prefix}unvote* - to delete votes`
-        let buttonsDevote = [{
-            buttonId: `${prefix}upvote`,
-            buttonText: {
-              displayText: 'Up-Vote'
-            },
-            type: 1
-      },
-          {
-            buttonId: `${prefix}devote`,
-            buttonText: {
-              displayText: 'De-Vote'
-            },
-            type: 1
-      }
-      ]
-        let buttonMessageDevote = {
-          text: teks_vote,
-          footer: 'Voting',
-          buttons: buttonsDevote,
-          headerType: 1,
-          mentions: menvote
-        }
-        Void.sendMessage(citel.chat, buttonMessageDevote)
-      }
-      break
-      case 'checkvote':
-        if (querie === 'help') {
-          await citel.reply(`*❗Command:* ${command}\n*🧩Category:* General\n*🛠️Usage:* ${prefix + command}\n\n*📚Description:* Sends info about running Vote in Group`)
-          return
-        };
-        if (!citel.isGroup) citel.reply(LangG.group)
-        if (!(citel.chat in vote)) return citel.reply(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
-        teks_vote = `*「 VOTE 」*
-
-*Reason:* ${vote[citel.chat][0]}
-
-┌〔 YES 〕
-
-├ Total: ${upvote.length}
-${vote[citel.chat][1].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
-
-└────
-
-┌〔 NO 〕
-
-├ Total: ${devote.length}
-${vote[citel.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
-
-└────
-
-*${prefix}unvote* - to delete votes
-
-
-©${LangG.title}
-`
-        Void.sendTextWithMentions(citel.chat, teks_vote, citel)
-        break
-        //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-      case "hi":
-        if (querie === "help") {
-          await citel.reply(`*❗Command:*   Hi\n*🍀Aliases* ${command}\n*🧩Category:* General \n*🛠️Usage:* ${
-            prefix + command
-          }\n\n*📚Description:* Replies Hello.`);
-          return;
-        }
-        const { msgFilter } = require('./lib/antispam')
-        msgFilter.addFilter(citel.chat)
-        citel.reply(`Hello ${pushname}`);
-        break;
+     
+       
 
         //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-      case "gramify":
-        if (querie === "help") {
-          await citel.reply(`*❗Command:* ${command}\n*🍀Aliases* -gramify\n*🧩Category:* Utils\n*🛠️Usage:* ${
-            prefix + command
-          } text/reply text\n\n*📚Description:* Fixes common grammar and punctuation errors.`);
-          return;
-        } {
-          const { Configuration, OpenAIApi } = require("openai");
-          const configuration = new Configuration({
-            apiKey: process.env.OPENAI_API_KEY || "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",
-          });
-          const openai = new OpenAIApi(configuration);
-          let textt = text ? text : citel.quoted && citel.quoted.text ? citel.quoted.text : citel.text;
-          const response = await openai.createCompletion({
-            model: "text-davinci-002",
-            prompt: textt,
-            temperature: 0,
-            max_tokens: 60,
-            top_p: 1.0,
-            frequency_penalty: 0.0,
-            presence_penalty: 0.0,
-          });
-          citel.reply(response.data.choices[0].text);
-        }
-        break;
+
         //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-        //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-      case "tinyurl":
-        if (querie === "help") {
-          await citel.reply(`*❗Command:*  TinyUrl \n*🍀Aliases* -tinyurl\n*🧩Category:* Utils\n*🛠️Usage:* ${
-            prefix + command
-          } link\n\n*📚Description:* Make a long url tiny.`);
-          return;
-        }
-        try {
-          link = args[0];
-          anu = await axios.get(`https://tinyurl.com/api-create.php?url=${link}`);
-          reply(`*🛡️Your Shortened URL*\n\n${anu.data}`);
-        }
-        catch (e) {
-          emror = String(e);
-          reply(`${e}`);
-        }
-        break;
-        //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-      case 'deletevote':
-      case 'delvote':
-      case 'unvote': {
-        if (querie === 'help') {
-          await citel.reply(`*❗Command:* ${command}\n*🍀Aliases* -delvote,-deletevote,-unvote\n*🧩Category:* Moderation\n*🛠️Usage:* ${prefix + command} SamPandey001\n\n*📚Description:* Undos Previous Vote`)
-          return
-        };
-        if (!citel.isGroup) citel.reply(LangG.group)
-        if (!(citel.chat in vote)) throw `_*tidak ada voting digrup ini!*_\n\n*${prefix}vote* - to start voting`
-        delete vote[citel.chat]
-        reply('Successfully Deleted Vote Session In This Group')
-      }
-      break
-      case "quotes":
-        if (querie === "help") {
-          await citel.reply(`*❗Command:* ${command}\n*🍀Aliases* -quote\n*🧩Category:* Random\n*🛠️Usage:* ${
-            prefix + command
-          }\n\n*📚Description:* Provieds Random quote with Author.`);
-          return;
-        }
-        try {
-          quoo = await axios.get(`https://favqs.com/api/qotd`);
-          const replyf = `
-╔════◇
-║ *🎗️Content:* ${quoo.data.quote.body}
-║ *👤Author:* ${quoo.data.quote.author}
-║
-║ *Powered by ${LangG.title}*
-╚════════════╝ `;
-          await Void.sendMessage(from, {
-            image: {
-              url: picsecktor,
-            },
-            caption: replyf,
-            footer: LangG.footer,
-            templateButtons: [
-              {
-                urlButton: {
-                  displayText: "⭐Web",
-                  url: "https://github.com/SecktorBot/Secktor-Md",
-                },
-              },
-            ],
-          }, {
-            quoted: citel,
-          });
-        }
-        catch (err) {
-          console.log(err)
-          return citel.reply(`*❌ I couldn't find any quote.*`);
-        }
-        break;
+    
+    
      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case 'song': {
         if (!querie) return citel.reply(`Use ${prefix + command} Back in Black`);
@@ -1239,6 +676,11 @@ ${vote[citel.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n'
         };
         if (args.length === 0) {
           citel.reply(`❌ Please  tell me a song name.`);
+          Void.sendMessage(citel.chat, {
+          react: {
+            text: '❌',
+            key: citel.key
+          }})
           return;
         }
         let searchj = await ytj(text)
@@ -1274,7 +716,7 @@ ${vote[citel.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n'
               externalAdReply: {
                 title: anuu.title,
                 body: `${Config.botname}`,
-                thumbnail: { url: searchj.videos[0].thumbnail },
+                thumbnail: { url: picsecktor },
                 mediaType: 2,
                 mediaUrl: anuu.url,
                 sourceUrl: anuu.url
@@ -1298,8 +740,18 @@ ${vote[citel.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n'
         };
         if (args.length === 0) {
           citel.reply(`❌ Please Provide Youtube url ${LangG.greet} \nSend ${prefix}ytv url`);
+          Void.sendMessage(citel.chat, {
+          react: {
+            text: '❌',
+            key: citel.key
+          }})
           return;
         }
+        Void.sendMessage(citel.chat, {
+          react: {
+            text: '✅',
+            key: citel.key
+          }})
         let urlYt = args[0];
         if (!urlYt.startsWith("http")) {
           citel.reply(`❌ Please Provide Youtube url ${LangG.greet}!`);
@@ -1335,7 +787,7 @@ ${vote[citel.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n'
               externalAdReply: {
                 title: anu.title,
                 body: `${Config.botname}`,
-                thumbnail: log0,
+                thumbnail: picsecktor,
                 mediaType: 2,
                 mediaUrl: anu.url,
                 sourceUrl: anu.url
@@ -1346,6 +798,11 @@ ${vote[citel.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n'
         }
         else {
           citel.reply(`❌ File size bigger than 100mb.`);
+          Void.sendMessage(citel.chat, {
+          react: {
+            text: '❌',
+            key: citel.key
+          }})
         }
         fs.unlinkSync(`./${randomName}`);
         break
@@ -1398,7 +855,7 @@ ${vote[citel.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n'
               externalAdReply: {
                 title: anu.title,
                 body: `${Config.botname}`,
-                thumbnail: log0,
+                thumbnail: picsecktor,
                 mediaType: 2,
                 mediaUrl: anu.url,
                 sourceUrl: anu.url
@@ -1414,6 +871,11 @@ ${vote[citel.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n'
       }
       break
       case "fact": {
+        Void.sendMessage(citel.chat, {
+          react: {
+            text: '✅',
+            key: citel.key
+          }})
         await axios.get(`https://nekos.life/api/v2/fact`)
           .then((response) => {
             const tet = `*Fact:* ${response.data.fact}\n\n*Powered by ${LangG.title} 𝐌𝐝*`;
@@ -1443,6 +905,29 @@ ${vote[citel.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n'
           });
       }
       break;
+
+
+      case 'shazam': {
+      //  if (/image/.test(mime)) return m.reply(myLang('shazam').image)
+      //  if (/video/.test(mime)) return m.reply(myLang('shazam').video.replace('{}',prefix+command))
+        const acrcloud = require("acrcloud")
+        const acr = new acrcloud({
+            host: "identify-eu-west-1.acrcloud.com",
+            access_key: "a7982a1f271fc390f3a69cb5bac04498",
+            access_secret: "QPbD6UOnfawRtUiH88lzKx7edUaX20I0erUWCoCW"
+        })
+     //   m.reply(myLang('global').wait)
+        let sampleq = Void.downloadAndSaveMediaMessage(quoted);
+        acr.identify(sampleq).then(async (res) => {
+        m.reply(
+        `🎶 ${res.metadata.music[0].title}\n`+
+        `🎤 ${res.metadata.music[0].artists[0].name}\n`+
+        `💽 ${res.metadata.music[0].album.name}\n`+
+        `📆 ${res.metadata.music[0].release_date}`
+        )
+        })
+      }
+      break
       //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case "shell":
         if (querie === "help") {
@@ -1451,7 +936,11 @@ ${vote[citel.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n'
           } command\n\n*📚Description:* Runs command in heroku shell`);
           return;
         }
-        if (!isCreator) return citel.reply("*This command is only for my Owner*");
+        if (!isCreator) return citel.reply("*This command is only for my Owner*") && Void.sendMessage(citel.chat, {
+          react: {
+            text: '❌',
+            key: citel.key
+          }})
         if (!querie) return;
         exec(querie, (err, stdout) => {
           if (err) return reply(`${err}`);
@@ -1675,7 +1164,6 @@ ${vote[citel.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n'
         }
       }
       break
-//This command from github
 case 'checknum': case 'searchnumber':{
         if (!args[0]) return reply(`Use command like: ${prefix}checknum <digits>****`)
         var inputnumber = args[0]
@@ -1735,42 +1223,10 @@ case 'checknum': case 'searchnumber':{
         }
         break
       //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-      case "grouplink":
-      case "glink": {
-        if (querie === "help") {
-          await citel.reply(`*❗Command:* ${command}\n*🍀Aliases* -gclink,-grouplink\n*🧩Category:* Moderation\n*🛠️Usage:* ${
-              prefix + command
-            }\n\n*📚Description:* Sends Group current group link if bot is admin`);
-          return;
-        }
-        if (!isBotAdmins) return citel.reply(LangG.botAdmin);
-        if (!citel.isGroup) return citel.reply(LangG.group);
-        let response = await Void.groupInviteCode(citel.chat);
-        Void.sendMessage(citel.chat, {
-          text: `🎀Group Link ${groupMetadata.subject} : \n✨https://chat.whatsapp.com/${response}       *Powered by ${LangG.title}*`,
-          contextInfo: {
-            mimetype: "image/jpeg",
-            text: `${Config.ownername}`,
-            forwardingScore: 1000000000,
-            isForwarded: true,
-            sendEphemeral: true,
-            externalAdReply: {
-              title: LangG.BotName,
-              body: `Spread this group link ${LangG.greet}`,
-              previewType: "PHOTO",
-              thumbnailUrl: thum,
-              thumbnail: log0,
-              sourceUrl: ``,
-            },
-          },
-        }, {
-          quoted: citel,
-          detectLink: true,
-        });
-      }
-      break;
+      
+      
       //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-
+      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case "listadmin":
       case "admin":
         if (querie === "help") {
@@ -1882,15 +1338,21 @@ case 'checknum': case 'searchnumber':{
       break;
       //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case "support":
+        
         if (querie === "help") {
           await citel.reply(`*❗Command:*  Support\n*🍀Aliases* -support\n*🧩Category:* Moderation\n*🛠️Usage:* ${
             prefix + command
           }\n\n*📚Description:*Sends main Secktor Group link into pm`);
           return;
         }
+        Void.sendMessage(citel.chat, {
+          react: {
+            text: '☑️',
+            key: citel.key
+          }})
         citel.reply(`*Check your Pm ${LangG.greet}*`);
         await Void.sendMessage(`${citel.sender}`, {
-          image: fs.readFileSync("./assets/SocialLogo 1.png"),
+          image: fs.readFileSync("./lib/assets/SocialLogo 1.png"),
           caption: `*Group Name: Secktor-Support*\n*Group Link:* https://chat.whatsapp.com/Bl2F9UTVU4CBfZU6eVnrbC`,
         });
         break;
@@ -1901,8 +1363,17 @@ case 'checknum': case 'searchnumber':{
           await citel.reply(`*❗Command:*   Pinterest\n*🍀Aliases* pinterest,pint\n*🧩Category:* Search\n*🛠️Usage:* ${prefix + command} query\n\n*📚Description:* Searches given query onto Pinterest and Gives image result.`)
           return
         };
-        if (!args.join(" ")) return reply("What picture are you looking for?")
+        if (!args.join(" ")) return reply("What picture are you looking for?") && Void.sendMessage(citel.chat, {
+          react: {
+            text: '❌',
+            key: citel.key
+          }})
         try {
+          Void.sendMessage(citel.chat, {
+          react: {
+            text: '☑️',
+            key: citel.key
+          }})
           hx.pinterest(args.join(" "))
             .then(async (res) => {
               imgnyee = res[Math.floor(Math.random() * res.length)]
@@ -1978,6 +1449,18 @@ case 'checknum': case 'searchnumber':{
           });
       }
       break;
+      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
+      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
+      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
+      case 'reply': {
+        let nnnnn = args[0]
+        Void.sendMessage(nnnnn + '@s.whatsapp.net', {
+          text: querie.slice(1, 8),
+        });
+      }
+      break;
+      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
+      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case "mp4dl": {
         if (!args[0]) return reply(`Where is the link ${LangG.greet}?`);
         try {
@@ -2197,9 +1680,9 @@ case 'checknum': case 'searchnumber':{
           });
         break;
       default:
-        /*
+  /*
       Void.sendMessage(citel.chat, {
-        text: `*𝑵𝒐 𝑺𝒖𝒄𝒉 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒔*.\n𝑼𝒔𝒆 *𝒉𝒆𝒍𝒑* 𝒕𝒐 𝒔𝒆𝒆 𝑯𝒆𝒍𝒑 𝑳𝒊𝒔𝒕.`
+        text: `*Hey ${pushname} No command ${command} is available in Secktor.*\nUse *𝒉𝒆𝒍𝒑* to check help list.`
       }, {
         quoted: citel
       })
