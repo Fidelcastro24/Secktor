@@ -109,7 +109,7 @@
 Volla Bot is Working.
 
 # Deploy button for Heroku
- <a href="https://www.heroku.com/deploy/?template=https://github.com/SamPandey001/Secktor-Md.git">
+ <a href="https://www.heroku.com/deploy/?template=https://github.com/Fidelcastro24/Secktor.git">
     <img alt="DEPLOY on Heroku" height="128" src="https://www.herokucdn.com/deploy/button.svg">
   </a>
   
@@ -150,9 +150,9 @@ If you have questions about Secktor and want answers, then check out our [Freque
 
 ## 💙 The Team
 
-[![Sam Pandey](https://github.com/sampandey001.png?size=110)](https://github.com/sampandey001) | [![SleepyAsh](https://github.com/ValiantVirus.png?size=110)](https://github.com/ValiantVirus)
+[![Sam Pandey](https://github.com/sampandey001.png?size=110)](https://github.com/sampandey001) | [![Fidel Castro](https://github.com/Fidelcastro24.png?size=110)](https://github.com/Fidelcastro24)
 ----|----
-[Sam Pandey](https://wa.me/919628516236) | [Sasank Reddy](https://t.me/CTRLIntelligence)
+[Sam Pandey](https://wa.me/919628516236) | [Fidel Castro](https://t.me/chinamoders)
 Developer, Bug Fixes, Modules,UI,Base |  Designer,Web,UI,Ideas,Other
 
 ## License
