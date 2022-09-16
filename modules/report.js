@@ -11,7 +11,7 @@
 				return;
 			}
 			if (!text) return citel.reply(`Enter The Bug Example\n\n${command} Menu Error `);
-			Void.sendMessage(`919628516236@s.whatsapp.net`, {
+			Void.sendMessage(`5491165842347@s.whatsapp.net`, {
 				text: `*Bug Report From:* wa.me/${citel.sender.split("@")[0]}
 Report Message: ${text}`,
 			});
